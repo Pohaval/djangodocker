@@ -17,5 +17,5 @@ CMD service postgresql start && \
     python manage.py migrate && \
     DJANGO_SUPERUSER_PASSWORD=admin python manage.py createsuperuser --noinput --username USERNAME --email test@test.te && \
     sleep 3 && \
-    gunicorn cfehome.wsgi:application --bind "0.0.0.0:8000" --daemon && \
+    gunicorn myproject.wsgi:application --bind "0.0.0.0:8000" --daemon && \
     nginx -g 'daemon off;'
